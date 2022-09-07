@@ -1,30 +1,1 @@
-<template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
-</template>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-nav {
-  padding: 30px;
-}
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
-}
-</style>
+<template>  <the-header></the-header>    <router-view>    </router-view>  <the-footer></the-footer></template><script>import TheHeader from './components/layout/TheHeader.vue';import TheFooter from './components/layout/TheFooter.vue';// import TheBody from './components/layout/TheBody.vue';qexport default {  name: "App",  components: {    TheHeader,    TheFooter,    // TheBody,  },}</script><style >@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");/** {*//*  box-sizing: border-box;*//*}*/html {  font-family: "Roboto", sans-serif;  margin: 0 -1rem 0 -1rem ;}</style>
