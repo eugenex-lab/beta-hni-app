@@ -67,7 +67,11 @@
 
 
 
-<!--  </TheBody>-->
+
+  <MarqueeSlides>
+
+  </MarqueeSlides>
+
 
 <span class="broadLayoutStocks">
     <div class="stockPane">
@@ -131,15 +135,19 @@
 <script>
 
 
-import { defineComponent, ref } from 'vue'; //
+import { defineComponent, ref } from 'vue';
+import MarqueeSlides from "@/components/cards/MarqueeSlides"; //
 // import StockSlider from 'src/components/plugins/StockSlider.vue';
 // import MarqueeText from 'vue-marquee-text-component'
+
 
 
 export default defineComponent( {
 
 
   components:{
+    // eslint-disable-next-line vue/no-unused-components
+    MarqueeSlides
     // MarqueeText
   },
   setup() {
@@ -248,7 +256,7 @@ main{
 
 .photoSlide { grid-area: photoSlide;
   width: auto;
-  height: 474px;
+  height: 425px;
 }
 .fxSlide { grid-area: fxSlide; }
 
@@ -302,7 +310,7 @@ mySliderImage {
 .prev, .next {
   cursor: pointer;
   position: absolute;
-  top: 19rem;
+  top: 16rem;
   width: auto;
   padding: 16px;
   color: #9c8f8f7d ;
@@ -327,7 +335,7 @@ mySliderImage {
 }
 
 .imgDiv{
-  background-color: #f3e019;
+  /*background-color: #f3e019;*/
   width: 100%;
   height: auto;
   right: 0;
@@ -375,7 +383,6 @@ table code {
   line-height: 17px;
   text-align: center;
   border-radius: 5px;
-  padding: 0 6px;
 
 
 }
@@ -517,6 +524,12 @@ background-color: rgb(229 189 202 / 18%);
 
   background-color: rgba(221, 237, 237, 0.72);
 
+}
+
+MarqueeSlides{
+  z-index: 1;
+  position: absolute;
+  margin-top: -2.5rem;
 }
 
 

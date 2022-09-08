@@ -3,7 +3,7 @@
     <nav>
       <h1>
         <router-link to="/">
-          <img src="https://dp76jxyzopnbo.cloudfront.net/wealthng/2.0/static/images/logo-w.svg" alt="home"/>
+          <img class="imagePosition" src="https://dp76jxyzopnbo.cloudfront.net/wealthng/2.0/static/images/logo-w.svg" alt="home"/>
         </router-link>
       </h1>
       <ul>
@@ -200,5 +200,15 @@ li:last-child {
   line-height: NaNpx;
   right: -0.5rem;
 }
+
+.imagePosition{
+  width: 100px;
+  height: auto;
+  position: relative;
+  top: 0.3em;
+  left: -0.5rem;
+}
+
+
 
 </style>
