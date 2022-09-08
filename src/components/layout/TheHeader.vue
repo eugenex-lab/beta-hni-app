@@ -171,8 +171,8 @@ li:last-child {
 
 .logOut {
 
-  height: 40px;
-  width: 160px;
+  height: 35px;
+  width: 90px;
   /*border-radius: 4px;*/
   background-color: #F2BF00;
   -webkit-appearance: button;
@@ -198,7 +198,7 @@ li:last-child {
   font-weight: 600;
   letter-spacing: 0;
   line-height: NaNpx;
-  right: -2.5rem;
+  right: -0.5rem;
 }
 
 </style>
