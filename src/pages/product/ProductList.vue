@@ -116,18 +116,62 @@
              <img class="blueBadgePosition" :src="savingsPic">
         </div>
 
+
+
+
       </section>
-      </span>
+
+                                <p class="textForRecommended">Recommended for You</p>
+
+
+ <div class="stockContainer">
+          <VueCarosel
+              class="cardSlide"></VueCarosel>
         </div>
 
-        <div class="stockContainer">2</div>
-        <div class="picContainer">3</div>
-        <div class="infoContainer">4</div>
+
+
+      </span>
+
+          <div class="adPane">
+            <p class="textRecommendedStocks">Hi Bitches </p>
+          </div>
+
+
+        </div>
+
+
+
+
+
+
+
+        <div class="picContainer">3
+        gimme allowee I no go stress u
+        </div>
+        <div class="infoContainer">
+              <a> Room is already booked </a>
+
+        </div>
+
+
       </section>
+
     </div>
-    <div class="adPane">2</div>
+
+
+
+
 </span>
+
+  <div>
+    <a>Hi Gentle perople of voilcence community </a>
+  </div>
 </section>
+
+
+
+
 
 <!--</body>-->
 </template>
@@ -137,17 +181,15 @@
 
 import { defineComponent, ref } from 'vue';
 import MarqueeSlides from "@/components/cards/MarqueeSlides"; //
-// import StockSlider from 'src/components/plugins/StockSlider.vue';
-// import MarqueeText from 'vue-marquee-text-component'
-
-
+import VueCarosel from "@/components/plugins/VueCarosel";
+// optional style for arrows & dots
 
 export default defineComponent( {
 
 
   components:{
     // eslint-disable-next-line vue/no-unused-components
-    MarqueeSlides
+    MarqueeSlides ,VueCarosel
     // MarqueeText
   },
   setup() {
@@ -163,29 +205,38 @@ export default defineComponent( {
         "https://images.unsplash.com/photo-1614028674026-a65e31bfd27c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
         "https://images.unsplash.com/photo-1560221328-12fe60f83ab8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1174&q=80",
         "https://cdn.pixabay.com/photo/2017/09/07/08/54/money-2724241_960_720.jpg",
-          "https://images.unsplash.com/photo-1642621741344-cddaecdafda2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-        require('../../../../public/images/Image slide.png')
+        "https://images.unsplash.com/photo-1642621741344-cddaecdafda2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+        require('../../../public/images/Image slide.png')
         ,
       ],
       triagleImageStockUp:
       // from public folder
-      require('../../../../public/images/iconmonstr-triangle-3-240.png'),
+          require('../../../public/images/iconmonstr-triangle-3-240.png'),
       triagleImageStockDown:
       // from public folder
-      require('../../../../public/images/iconmonstr-triangle-3-240 (1).png'),
+          require('../../../public/images/iconmonstr-triangle-3-240 (1).png'),
 
-      treasuryBillPic:require('../../../../public/images/bond-cert-icon.svg'),
-      bondPic:require('../../../../public/images/bondPic.png'),
-      stockPic:require('../../../../public/images/stocksPic.png'),
-      agricPic:require('../../../../public/images/tractor icon.png'),
-      realEstatePic:require('../../../../public/images/building icon.svg'),
-      savingsPic:require('../../../../public/images/piggybank icon.png'),
-      
+      treasuryBillPic: require('../../../public/images/bond-cert-icon.svg'),
+      bondPic: require('../../../public/images/bondPic.png'),
+      stockPic: require('../../../public/images/stocksPic.png'),
+      agricPic: require('../../../public/images/tractor icon.png'),
+      realEstatePic: require('../../../public/images/building icon.svg'),
+      savingsPic: require('../../../public/images/piggybank icon.png'),
 
 
       timer: null,
       currentIndex: 0
-    };
+
+      ,
+
+      slides: Array(5)
+          .fill() //
+          .map((_, i) => ({
+            // title: `title ${i}`,
+            // content: `content ${i}`,
+            image: `https://picsum.photos/id/${i + 1}/400/300`
+          }))
+    }
 
   }
   ,
@@ -251,7 +302,11 @@ main{
         "fxSlide" 1fr
         "." 1fr / 1fr;
   gap: 0px 4px;
-  align-content: start;
+  align-content: flex-start;
+  padding-bottom: 7rem
+
+;
+
 }
 
 .photoSlide { grid-area: photoSlide;
@@ -288,6 +343,7 @@ img {
   height:450px;
   width:100%;
   margin-top: -2rem;
+
 }
 
 
@@ -357,7 +413,7 @@ table code {
 }
 
 .badge-info{
-  background-color: #17a2b8;
+  /*background-color: #17a2b8;*/
   padding: 0.25rem 0.4rem;
 }
 
@@ -388,10 +444,21 @@ table code {
 }
 
 .layoutStock{
-  width: -webkit-fill-available;
+
+  width: fit-content;
   display: flex;
   gap: 40px;
   justify-content: space-between;
+
+
+  /*height: 168px;*/
+  /*display: grid;*/
+  /*grid-template-rows: 1fr;*/
+  /*grid-template-columns: repeat(6, 1fr);*/
+  /*gap: 50px 4%;*/
+  /*margin-top: 2.5rem;*/
+  /*margin-left: -1rem;*/
+  /*grid-column-gap: 1rem;*/
 }
 
 .stockPane{
@@ -402,26 +469,38 @@ table code {
 }
 
 .adPane{
-  height: 100%;
-  width: 24%;
-  background-color: #063a79;
-
+  height: 18rem;
+  width: 10rem;
+  background-color: #b25656;
+  padding-left: 12rem;
+  position: relative;
+  margin-left: 3rem;
 
 
 }
 
 .buttonContainer{
+  /*display: flex;*/
+  /*justify-content: center;*/
+  /*align-items: self-start;*/
+  /*margin-top: 10px;*/
+
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: self-start;
   margin-top: 10px;
 }
 
 .stockContainer{
-  display: flex;
+  display: block;
   justify-content: center;
   align-items: center;
-  margin-top: 10px;
+  /*height: 200px; //dont add height */
+  width: 100%;
+  margin-right: 8rem;
+  margin-left: -2.5rem;
+
+
 }
 
 .picContainer{
@@ -446,7 +525,7 @@ table code {
   grid-template-columns: repeat(6, 1fr);
   gap: 50px 4%;
   margin-top: 2.5rem;
-  margin-left: -1rem;
+  /*margin-left: -1rem;*/
 
   grid-column-gap: 1rem;
 
@@ -468,6 +547,10 @@ table code {
   justify-content: center;
   align-items: center;
   margin-top: 10px;
+  margin-left: -4rem
+
+;
+
 }
 
 .rectangleBlueText {
@@ -505,7 +588,7 @@ table code {
   justify-content: center;
   align-items: center;
   margin-top: 10px;
-  background-color: aqua;
+  /*background-color: aqua;*/
 }
 
 
@@ -522,7 +605,7 @@ background-color: rgb(229 189 202 / 18%);
 
 .main{
 
-  background-color: rgba(221, 237, 237, 0.72);
+  background-color: rgb(246 246 246)
 
 }
 
@@ -530,8 +613,61 @@ MarqueeSlides{
   z-index: 1;
   position: absolute;
   margin-top: -2.5rem;
+  height: 10rem;
+
+}
+
+.textForRecommended{
+  height: 21px;
+  width: 198px;
+  color: #020E1E;
+  font-family: Inter;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 11rem;
+  margin-top: -13rem;
 }
 
 
+.vueperslide {
 
+  height: 13em;
+  width: 290em;
+
+}
+
+
+.no-shadow{
+  width: 56rem;
+}
+
+
+.cardSlide{
+
+
+/*cardSlide  width: 60rem;*/
+/*  height: initial;*/
+/*  display: flex;*/
+/*  align-items: center;*/
+/*  background-color: aqua;*/
+/*  margin-top: 6rem;*/
+
+
+
+  /* display: flex; */
+  /* align-items: center; */
+  /* background-color: aqua; */
+  /* margin-top: 6rem; */
+
+
+width: 62.1rem;
+  height: initial;
+  display: flex;
+  align-items: center;
+  /*background-color: aqua;*/
+  margin-top: 6rem;
+  position: relative;
+
+}
 </style>
