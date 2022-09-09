@@ -1,79 +1,72 @@
-<template >
-<!--<body>-->
-<section class="main">
-  <div class="photoSlide">
-    <transition-group name="fade" tag="div">
-      <div v-for="i in [currentIndex]" :key="i" class="imgDiv">
-        <img class="mySliderImage" :src="currentImg" />
-      </div>
-    </transition-group>
-    <a class="prev" @click="prev" href="#">&#10094; Previous</a>
-    <a class="next" @click="next" href="#">&#10095; Next</a>
-  </div>
-<!--  <MarqueeText-->
-<!--      :duration="45"-->
-<!--      :repeat="3"-->
-<!--      :paused="isPaused"-->
-<!--      class="py-2 bg-dark text-black text-center"-->
-<!--      @mouseenter="isPaused = !isPaused"-->
-<!--      @mouseleave="isPaused = false"-->
-<!--  >-->
+<template>
+  <!--<body>-->
+  <section class="main">
+    <div class="photoSlide">
+      <transition-group name="fade" tag="div">
+        <div v-for="i in [currentIndex]" :key="i" class="imgDiv">
+          <img class="mySliderImage" :src="currentImg"/>
+        </div>
+      </transition-group>
+      <a class="prev" @click="prev" href="#">&#10094; Previous</a>
+      <a class="next" @click="next" href="#">&#10095; Next</a>
+    </div>
+    <!--  <MarqueeText-->
+    <!--      :duration="45"-->
+    <!--      :repeat="3"-->
+    <!--      :paused="isPaused"-->
+    <!--      class="py-2 bg-dark text-black text-center"-->
+    <!--      @mouseenter="isPaused = !isPaused"-->
+    <!--      @mouseleave="isPaused = false"-->
+    <!--  >-->
 
-<!--    <span  class="borderStock">TWITTER <img class="triangle-up" :src="triagleImageStockUp" > 0.30% </span>-->
-<!--    <span class="borderStock">FACEBOOK<img class="triangle-down" :src="triagleImageStockDown" >  -0.16% </span>-->
-<!--    <span class="borderStock"> TESLA <img class="triangle-up" :src="triagleImageStockUp"> 0.14%</span>-->
-<!--    <span class="borderStock" >AMAZON <img class="triangle-down" :src="triagleImageStockDown">-0.19%</span>-->
-<!--    <span class="borderStock" >APPLE  <img class="triangle-up" :src="triagleImageStockUp">0.12%</span>-->
-<!--    <span class="borderStock">MICROSOFT  <img class="triangle-up" :src="triagleImageStockUp">0.13%</span>-->
-<!--    <span  class="borderStock"> GOOGLE  <img class="triangle-up" :src="triagleImageStockUp">-0.19%</span>-->
-<!--    <span class="borderStock"> NETFLIX  <img class="triangle-down" :src="triagleImageStockDown">-0.19%</span>-->
-<!--    <span class="borderStock"> FACEBOOK  <img class="triangle-up" :src="triagleImageStockUp"> 0.19%</span>-->
-<!--    <span class="borderStock"> TESLA  <img class="triangle-down" :src="triagleImageStockDown">-0.19%</span>-->
-<!--    <span class="borderStock"> AMAZON  <img class="triangle-up" :src="triagleImageStockUp">0.19%</span>-->
-<!--    <span class="borderStock"> APPLE  <img class="triangle-down" :src="triagleImageStockDown">-0.19%</span>-->
-<!--    <span class="borderStock"> MICROSOFT  <img class="triangle-up" :src="triagleImageStockUp">0.19%</span>-->
+    <!--    <span  class="borderStock">TWITTER <img class="triangle-up" :src="triagleImageStockUp" > 0.30% </span>-->
+    <!--    <span class="borderStock">FACEBOOK<img class="triangle-down" :src="triagleImageStockDown" >  -0.16% </span>-->
+    <!--    <span class="borderStock"> TESLA <img class="triangle-up" :src="triagleImageStockUp"> 0.14%</span>-->
+    <!--    <span class="borderStock" >AMAZON <img class="triangle-down" :src="triagleImageStockDown">-0.19%</span>-->
+    <!--    <span class="borderStock" >APPLE  <img class="triangle-up" :src="triagleImageStockUp">0.12%</span>-->
+    <!--    <span class="borderStock">MICROSOFT  <img class="triangle-up" :src="triagleImageStockUp">0.13%</span>-->
+    <!--    <span  class="borderStock"> GOOGLE  <img class="triangle-up" :src="triagleImageStockUp">-0.19%</span>-->
+    <!--    <span class="borderStock"> NETFLIX  <img class="triangle-down" :src="triagleImageStockDown">-0.19%</span>-->
+    <!--    <span class="borderStock"> FACEBOOK  <img class="triangle-up" :src="triagleImageStockUp"> 0.19%</span>-->
+    <!--    <span class="borderStock"> TESLA  <img class="triangle-down" :src="triagleImageStockDown">-0.19%</span>-->
+    <!--    <span class="borderStock"> AMAZON  <img class="triangle-up" :src="triagleImageStockUp">0.19%</span>-->
+    <!--    <span class="borderStock"> APPLE  <img class="triangle-down" :src="triagleImageStockDown">-0.19%</span>-->
+    <!--    <span class="borderStock"> MICROSOFT  <img class="triangle-up" :src="triagleImageStockUp">0.19%</span>-->
 
-<!--  </MarqueeText>-->
-
-
+    <!--  </MarqueeText>-->
 
 
+    <!--    <MarqueeText-->
+    <!--        :duration="20"-->
+    <!--        :paused="isPaused"-->
+    <!--        reverse-->
+    <!--        class="py-2 mt-2 bg-light"-->
+    <!--    >-->
+    <!--      Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt-->
+    <!--      ut labore et dolore magna aliquyam erat, sed diam voluptua.-->
+    <!--    </MarqueeText>-->
+    <!--    <MarqueeText-->
+    <!--        :duration="45"-->
+    <!--        :repeat="3"-->
+    <!--        :paused="isPaused"-->
+    <!--        class="py-2 bg-dark text-white"-->
+    <!--    >-->
+    <!--      <span class="badge badge-success ml-2">0,0000038%</span> ATX-->
+    <!--      <span class="badge badge-danger ml-2">0,000016%</span> DAX-->
+    <!--      <span class="badge badge-success ml-2">0,0000004%</span> TecDax-->
+    <!--      <span class="badge badge-danger ml-2">0,0009%</span> MDAX-->
+    <!--      <span class="badge badge-success ml-2">0,00000003%</span> ESTX50-->
+    <!--      <span class="badge badge-info ml-2">0,0000%</span> NIKKEI-->
+    <!--      <span class="badge badge-success ml-2">0,00003%</span> EUR/CHF-->
+    <!--    </MarqueeText>-->
 
 
-  <!--    <MarqueeText-->
-  <!--        :duration="20"-->
-  <!--        :paused="isPaused"-->
-  <!--        reverse-->
-  <!--        class="py-2 mt-2 bg-light"-->
-  <!--    >-->
-  <!--      Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt-->
-  <!--      ut labore et dolore magna aliquyam erat, sed diam voluptua.-->
-  <!--    </MarqueeText>-->
-  <!--    <MarqueeText-->
-  <!--        :duration="45"-->
-  <!--        :repeat="3"-->
-  <!--        :paused="isPaused"-->
-  <!--        class="py-2 bg-dark text-white"-->
-  <!--    >-->
-  <!--      <span class="badge badge-success ml-2">0,0000038%</span> ATX-->
-  <!--      <span class="badge badge-danger ml-2">0,000016%</span> DAX-->
-  <!--      <span class="badge badge-success ml-2">0,0000004%</span> TecDax-->
-  <!--      <span class="badge badge-danger ml-2">0,0009%</span> MDAX-->
-  <!--      <span class="badge badge-success ml-2">0,00000003%</span> ESTX50-->
-  <!--      <span class="badge badge-info ml-2">0,0000%</span> NIKKEI-->
-  <!--      <span class="badge badge-success ml-2">0,00003%</span> EUR/CHF-->
-  <!--    </MarqueeText>-->
+    <MarqueeSlides>
+
+    </MarqueeSlides>
 
 
-
-
-
-  <MarqueeSlides>
-
-  </MarqueeSlides>
-
-
-<span class="broadLayoutStocks">
+    <span class="broadLayoutStocks">
     <div class="stockPane">
       <section class="innerLayoutStock">
         <div class="buttonContainer">
@@ -114,6 +107,7 @@
           <img class="rectangleBlue">
               <div class="rectangleBlueText">Savings</div>
              <img class="blueBadgePosition" :src="savingsPic">
+
         </div>
 
 
@@ -164,107 +158,104 @@
 
 </span>
 
-  <div>
-    <a>Hi Gentle perople of voilcence community </a>
-  </div>
-</section>
+    <div>
+      <a>Hi Gentle perople of voilcence community </a>
+    </div>
+  </section>
 
 
-
-
-
-<!--</body>-->
+  <!--</body>-->
 </template>
 
 <script>
 
 
-import { defineComponent, ref } from 'vue';
+import {defineComponent, ref} from 'vue';
 import MarqueeSlides from "@/components/cards/MarqueeSlides"; //
 import VueCarosel from "@/components/plugins/VueCarosel";
 // optional style for arrows & dots
 
-export default defineComponent( {
+export default defineComponent({
 
 
-  components:{
-    // eslint-disable-next-line vue/no-unused-components
-    MarqueeSlides ,VueCarosel
-    // MarqueeText
-  },
-  setup() {
-    return {
-      isPaused: ref(false)
-    }
-  }
-  ,
-  name: "ProductList.vue",
-  data() {
-    return {
-      images: [
-        "https://images.unsplash.com/photo-1614028674026-a65e31bfd27c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-        "https://images.unsplash.com/photo-1560221328-12fe60f83ab8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1174&q=80",
-        "https://cdn.pixabay.com/photo/2017/09/07/08/54/money-2724241_960_720.jpg",
-        "https://images.unsplash.com/photo-1642621741344-cddaecdafda2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-        require('../../../public/images/Image slide.png')
-        ,
-      ],
-      triagleImageStockUp:
-      // from public folder
-          require('../../../public/images/iconmonstr-triangle-3-240.png'),
-      triagleImageStockDown:
-      // from public folder
-          require('../../../public/images/iconmonstr-triangle-3-240 (1).png'),
+      components: {
+        // eslint-disable-next-line vue/no-unused-components
+        MarqueeSlides, VueCarosel
+        // MarqueeText
+      },
+      setup() {
+        return {
+          isPaused: ref(false)
+        }
+      }
+      ,
+      name: "ProductList.vue",
+      data() {
+        return {
+          images: [
+            "https://images.unsplash.com/photo-1614028674026-a65e31bfd27c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+            "https://images.unsplash.com/photo-1560221328-12fe60f83ab8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1174&q=80",
+            "https://cdn.pixabay.com/photo/2017/09/07/08/54/money-2724241_960_720.jpg",
+            "https://images.unsplash.com/photo-1642621741344-cddaecdafda2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+            require('../../../public/images/Image slide.png')
+            ,
+          ],
+          triagleImageStockUp:
+          // from public folder
+              require('../../../public/images/iconmonstr-triangle-3-240.png'),
+          triagleImageStockDown:
+          // from public folder
+              require('../../../public/images/iconmonstr-triangle-3-240 (1).png'),
 
-      treasuryBillPic: require('../../../public/images/bond-cert-icon.svg'),
-      bondPic: require('../../../public/images/bondPic.png'),
-      stockPic: require('../../../public/images/stocksPic.png'),
-      agricPic: require('../../../public/images/tractor icon.png'),
-      realEstatePic: require('../../../public/images/building icon.svg'),
-      savingsPic: require('../../../public/images/piggybank icon.png'),
+          treasuryBillPic: require('../../../public/images/bond-cert-icon.svg'),
+          bondPic: require('../../../public/images/bondPic.png'),
+          stockPic: require('../../../public/images/stocksPic.png'),
+          agricPic: require('../../../public/images/tractor icon.png'),
+          realEstatePic: require('../../../public/images/building icon.svg'),
+          savingsPic: require('../../../public/images/piggybank icon.png'),
 
 
-      timer: null,
-      currentIndex: 0
+          timer: null,
+          currentIndex: 0
 
+          ,
+
+          slides: Array(5)
+              .fill() //
+              .map((_, i) => ({
+                // title: `title ${i}`,
+                // content: `content ${i}`,
+                image: `https://picsum.photos/id/${i + 1}/400/300`
+              }))
+        }
+
+      }
       ,
 
-      slides: Array(5)
-          .fill() //
-          .map((_, i) => ({
-            // title: `title ${i}`,
-            // content: `content ${i}`,
-            image: `https://picsum.photos/id/${i + 1}/400/300`
-          }))
+      mounted: function () {
+        this.startSlide();
+      },
+
+      methods: {
+        startSlide: function () {
+          this.timer = setInterval(this.next, 30000);
+        },
+
+        next: function () {
+          this.currentIndex += 1;
+        },
+        prev: function () {
+          this.currentIndex -= 1;
+        }
+      },
+
+      computed: {
+        currentImg: function () {
+          return this.images[Math.abs(this.currentIndex) % this.images.length];  //
+        }
+      }
+
     }
-
-  }
-  ,
-
-  mounted: function() {
-    this.startSlide();
-  },
-
-  methods: {
-    startSlide: function() {
-      this.timer = setInterval(this.next, 30000);
-    },
-
-    next: function() {
-      this.currentIndex += 1;
-    },
-    prev: function() {
-      this.currentIndex -= 1;
-    }
-  },
-
-  computed: {
-    currentImg: function() {
-      return this.images[Math.abs(this.currentIndex) % this.images.length];  //
-    }
-  }
-
-}
 )
 </script>
 
@@ -282,7 +273,7 @@ export default defineComponent( {
   margin-top: 0px;
 }
 
-main{
+main {
   position: absolute;
   height: auto;
   bottom: 0;
@@ -303,17 +294,19 @@ main{
         "." 1fr / 1fr;
   gap: 0px 4px;
   align-content: flex-start;
-  padding-bottom: 7rem
-
-;
+  padding-bottom: 7rem;
 
 }
 
-.photoSlide { grid-area: photoSlide;
+.photoSlide {
+  grid-area: photoSlide;
   width: auto;
   height: 425px;
 }
-.fxSlide { grid-area: fxSlide; }
+
+.fxSlide {
+  grid-area: fxSlide;
+}
 
 
 .fade-enter-active,
@@ -322,7 +315,7 @@ main{
   overflow: hidden;
   visibility: visible;
   position: absolute;
-  width:100%;
+  width: 100%;
   opacity: 1;
   margin-top: -17px;
   margin-right: -10px;
@@ -333,15 +326,15 @@ main{
 .fade-enter,
 .fade-leave-to {
   visibility: hidden;
-  width:100%;
+  width: 100%;
   opacity: 0;
   margin-right: 90px;
 
 }
 
 img {
-  height:450px;
-  width:100%;
+  height: 450px;
+  width: 100%;
   margin-top: -2rem;
 
 }
@@ -352,7 +345,7 @@ mySliderImage {
   /*width:100%*/
 }
 
-.triangle-down{
+.triangle-down {
   width: 15px;
   height: 14px;
   position: relative;
@@ -369,7 +362,7 @@ mySliderImage {
   top: 16rem;
   width: auto;
   padding: 16px;
-  color: #9c8f8f7d ;
+  color: #9c8f8f7d;
   font-weight: bold;
   font-size: 18px;
   transition: 0.7s ease;
@@ -387,15 +380,14 @@ mySliderImage {
 }
 
 .prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.9);
+  background-color: rgba(0, 0, 0, 0.9);
 }
 
-.imgDiv{
+.imgDiv {
   /*background-color: #f3e019;*/
   width: 100%;
   height: auto;
   right: 0;
-
 
 
 }
@@ -412,19 +404,19 @@ table code {
   background-color: #dc3545;
 }
 
-.badge-info{
+.badge-info {
   /*background-color: #17a2b8;*/
   padding: 0.25rem 0.4rem;
 }
 
 .bg-dark {
   /*background-color: rgba(255, 255, 255, 0) !important;*/
-    background-color: #515b53 !important;
+  background-color: #515b53 !important;
   margin-top: -24px;
-    background-image: url("https://i.pinimg.com/736x/16/07/07/1607070d4246505b1e15bd379db3daba.jpg");
+  background-image: url("https://i.pinimg.com/736x/16/07/07/1607070d4246505b1e15bd379db3daba.jpg");
 }
 
-.borderStock{
+.borderStock {
 
   /*border-radius: -30px;*/
   margin: 13px;
@@ -443,7 +435,7 @@ table code {
 
 }
 
-.layoutStock{
+.layoutStock {
 
   width: fit-content;
   display: flex;
@@ -461,14 +453,14 @@ table code {
   /*grid-column-gap: 1rem;*/
 }
 
-.stockPane{
+.stockPane {
   height: fit-content;
   width: 80%;
   /*background-color: #f3e019;*/
   margin-left: 70px;
 }
 
-.adPane{
+.adPane {
   height: 18rem;
   width: 10rem;
   background-color: #b25656;
@@ -479,7 +471,7 @@ table code {
 
 }
 
-.buttonContainer{
+.buttonContainer {
   /*display: flex;*/
   /*justify-content: center;*/
   /*align-items: self-start;*/
@@ -491,7 +483,7 @@ table code {
   margin-top: 10px;
 }
 
-.stockContainer{
+.stockContainer {
   display: block;
   justify-content: center;
   align-items: center;
@@ -503,19 +495,20 @@ table code {
 
 }
 
-.picContainer{
+.picContainer {
   display: flex;
   justify-content: space-around;
   align-items: inherit;
   margin-top: 10px;
 }
 
-.infoContainer{
+.infoContainer {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 10px;
 }
+
 .layoutStock {
 
   height: 168px;
@@ -539,7 +532,7 @@ table code {
   border-radius: 9px;
 }
 
-.broadLayoutStocks{
+.broadLayoutStocks {
 
   width: 100%;
   height: 100%;
@@ -547,9 +540,7 @@ table code {
   justify-content: center;
   align-items: center;
   margin-top: 10px;
-  margin-left: -4rem
-
-;
+  margin-left: -4rem;
 
 }
 
@@ -569,7 +560,7 @@ table code {
   color: #ffffff;
 }
 
-.blueBadgePosition{
+.blueBadgePosition {
   margin-top: -1.5rem;
   margin-left: 7rem;
   width: 1.5rem;
@@ -578,10 +569,7 @@ table code {
 }
 
 
-
-
-
-.mainContainer{
+.mainContainer {
   width: 100%;
   height: 100%;
   display: flex;
@@ -592,24 +580,24 @@ table code {
 }
 
 
-body{
-background-color: rgb(229 189 202 / 18%);
+body {
+  background-color: rgb(229 189 202 / 18%);
 }
 
-#resizeStock{
+#resizeStock {
   width: 1.9rem;
   position: absolute;
   margin-top: -2em;
   height: 2.2rem;
 }
 
-.main{
+.main {
 
   background-color: rgb(246 246 246)
 
 }
 
-MarqueeSlides{
+MarqueeSlides {
   z-index: 1;
   position: absolute;
   margin-top: -2.5rem;
@@ -617,7 +605,7 @@ MarqueeSlides{
 
 }
 
-.textForRecommended{
+.textForRecommended {
   height: 21px;
   width: 198px;
   color: #020E1E;
@@ -638,21 +626,20 @@ MarqueeSlides{
 }
 
 
-.no-shadow{
+.no-shadow {
   width: 56rem;
 }
 
 
-.cardSlide{
+.cardSlide {
 
 
-/*cardSlide  width: 60rem;*/
-/*  height: initial;*/
-/*  display: flex;*/
-/*  align-items: center;*/
-/*  background-color: aqua;*/
-/*  margin-top: 6rem;*/
-
+  /*cardSlide  width: 60rem;*/
+  /*  height: initial;*/
+  /*  display: flex;*/
+  /*  align-items: center;*/
+  /*  background-color: aqua;*/
+  /*  margin-top: 6rem;*/
 
 
   /* display: flex; */
@@ -661,7 +648,7 @@ MarqueeSlides{
   /* margin-top: 6rem; */
 
 
-width: 62.1rem;
+  width: 62.1rem;
   height: initial;
   display: flex;
   align-items: center;

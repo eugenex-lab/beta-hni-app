@@ -7,7 +7,16 @@
            :image="slide.image"
            :title="slide.title"
            :content="slide.content">
-      <img  class="imageDerivatesResize" :src="slide.image" alt="slide image">
+
+        <img  class="imageDerivatesResize" :src="slide.image" alt="slide image">
+      <section class="stockGrid">
+
+      <div class="imageTop">1
+      </div>
+        <div class="statsSection">2</div>
+        <div class="keepSubmitButton">3</div>
+
+      </section>
     </slide>
 
       <navigation />
@@ -36,7 +45,6 @@ export default {
 
             image: require(`../../components/assets/images/stockCardsEach.png`),
 title: `Slide ${i + 1}`,
-
 
           }))
 
@@ -109,6 +117,30 @@ title: `Slide ${i + 1}`,
 
 .carousel__item{
   /*background-color: #063a79;*/
+}
+
+
+.stockGrid{
+  width: 7rem;
+  height: 10rem;
+  position: absolute;
+  /*top: 0;*/
+}
+
+.imageTop {
+  padding-bottom: 2.8rem;
+  background-color: beige;
+  padding-left: -4rem;
+  margin-left: -0.558rem;
+  margin-right: -0.58rem;
+}
+
+.statsSection{
+  padding-bottom: 2.8rem;
+  background-color: #063a79;
+  padding-left: -4rem;
+  margin-left: -0.558rem;
+  margin-right: -0.58rem;
 }
 
 </style>
