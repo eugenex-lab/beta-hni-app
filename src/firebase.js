@@ -1,6 +1,8 @@
 
 
-import firebase from 'firebase'
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/firestore';
+import 'firebase/compat/auth';
 import { ref, onUnmounted } from 'vue'
 
 
@@ -39,8 +41,11 @@ export const deleteWealthProduct = id => {
 export const useLoadWealthProducts= () => {
     const wealthProducts = ref([])
     const close = productCollection.onSnapshot(snapshot => {
-        wealthProducts.value = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }))
+        wealthProducts.value = snapshot.docs.map(doc => ({id: doc.id, ...doc.data()}))
     })
     onUnmounted(close)
     return wealthProducts
 }
+
+
+export default firebase;
