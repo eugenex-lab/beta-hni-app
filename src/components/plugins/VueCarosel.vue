@@ -3,12 +3,20 @@
             :wrap-around="false"
 
   >
-    <slide class="carousel__item" v-for="(slide , i) in slides" :key="i"
-           :image="slide.image"
-           :title="slide.title"
-           :content="slide.content">
+<!--    <slide class="carousel__item" v-for="(slide, i) in slides   ,  (productName) in products  " :key="i"-->
+<!--    >-->
 
-        <img  class="imageDerivatesResize" :src="slide.image" alt="slide image">
+      <slide class="carousel__item" v-for="{id, productName,} in products  " :key="id"
+      >
+
+
+          <div class="carousel__item__content__title">
+            {{productName}}
+          </div>
+
+
+<!--      <img  class="imageDerivatesResize" :src="slide.image" alt="slide image">-->
+
 
       <section class="stockGrid">
 
@@ -28,7 +36,8 @@
 
 <script>
 import 'vue3-carousel/dist/carousel.css';
-import { Carousel, Slide, Navigation , Pagination } from 'vue3-carousel'; //
+import { Carousel, Slide, Navigation , Pagination } from 'vue3-carousel';
+import {useLoadWealthProducts} from "@/firebase"; //
 
 export default {
   name: 'App',
@@ -52,6 +61,11 @@ title: `Slide ${i + 1}`,
 
 };
   },
+  setup(){
+    const products =  useLoadWealthProducts()
+    return { products }
+  }
+
 };
 </script>
 
@@ -169,5 +183,6 @@ title: `Slide ${i + 1}`,
   height: var(--vc-icn-width);
   fill: white;
 }
+
 
 </style>

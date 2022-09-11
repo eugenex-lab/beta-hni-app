@@ -40,7 +40,7 @@ export const deleteWealthProduct = id => {
 
 export const useLoadWealthProducts= () => {
     const wealthProducts = ref([])
-    const close = productCollection.onSnapshot(snapshot => {
+    productCollection.onSnapshot(snapshot => {
         wealthProducts.value = snapshot.docs.map(doc => ({id: doc.id, ...doc.data()}))
     })
     onUnmounted(close)
