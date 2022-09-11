@@ -120,7 +120,9 @@
 
  <div class="stockContainer">
           <VueCarosel
-              class="cardSlide"></VueCarosel>
+              class="cardSlide"
+
+          ></VueCarosel>
         </div>
 
 
@@ -490,7 +492,7 @@ table code {
   /*height: 200px; //dont add height */
   width: 100%;
   margin-right: 8rem;
-  margin-left: -2.5rem;
+  margin-left: -3.3rem;
 
 
 }
@@ -541,6 +543,9 @@ table code {
   align-items: center;
   margin-top: 10px;
   margin-left: -4rem;
+
+  background-color: #e1e1e1;
+
 
 }
 
@@ -593,7 +598,7 @@ body {
 
 .main {
 
-  background-color: rgb(246 246 246)
+  background-color: #e1e1e1;
 
 }
 
@@ -615,6 +620,8 @@ MarqueeSlides {
   letter-spacing: 0;
   line-height: 11rem;
   margin-top: -13rem;
+  margin-left: 0.6em;
+
 }
 
 
@@ -650,11 +657,14 @@ MarqueeSlides {
 
   width: 62.1rem;
   height: initial;
-  display: flex;
+  /*display: flex;*/
   align-items: center;
   /*background-color: aqua;*/
   margin-top: 6rem;
   position: relative;
+  position: relative;
+  right: -1.3em;
+
 
 }
 </style>

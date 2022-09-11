@@ -3,31 +3,32 @@
             :wrap-around="false"
 
   >
-    <slide class="carousel__item" v-for="(slide, i) in slides" :key="i"
+    <slide class="carousel__item" v-for="(slide , i) in slides" :key="i"
            :image="slide.image"
            :title="slide.title"
            :content="slide.content">
 
         <img  class="imageDerivatesResize" :src="slide.image" alt="slide image">
+
       <section class="stockGrid">
 
-      <div class="imageTop">1
-      </div>
-        <div class="statsSection">2</div>
-        <div class="keepSubmitButton">3</div>
+<!--      <div class="imageTop">1-->
+<!--      </div>-->
+<!--        <div class="statsSection">2</div>-->
+<!--        <div class="keepSubmitButton">3</div>-->
 
       </section>
     </slide>
-
+    <template #addons>
       <navigation />
       <pagination />
+    </template>
   </carousel>
 </template>
 
 <script>
-// If you are using PurgeCSS, make sure to whitelist the carousel CSS classes
 import 'vue3-carousel/dist/carousel.css';
-import { Carousel, Slide, Navigation } from 'vue3-carousel';
+import { Carousel, Slide, Navigation , Pagination } from 'vue3-carousel'; //
 
 export default {
   name: 'App',
@@ -35,13 +36,14 @@ export default {
     Carousel,
     Slide,
     Navigation,
+    Pagination
   },
   data() {
     return {
-      slides: Array(10)
+      slides: Array(14)
           .fill()
           .map((_, i) => ({
-            // image: `https://picsum.photos/id/${i + 1}/400/300`
+            // image: `https://picsum.photos/id/${i + 1}/400/300`,
 
             image: require(`../../components/assets/images/stockCardsEach.png`),
 title: `Slide ${i + 1}`,
@@ -57,14 +59,17 @@ title: `Slide ${i + 1}`,
 
 .carousel__prev--in-active,
 .carousel__next--in-active {
-  display: none;
+  /*display: ;*/
   color: #063a79;
 }
 
-.carousel__prev,
-.carousel__next {
-  color: #050505;
+
+.carousel__next--in-active ,.carousel__next {
+  /*display: ;*/
+  margin-left: 0rem;
 }
+
+
 
 .carousel__prev, .carousel__next {
   background-color: #063a79;
@@ -82,6 +87,18 @@ title: `Slide ${i + 1}`,
 
 
 }
+
+
+.carousel__prev--in-active ,.carousel__prev {
+  left: -0.7em;
+
+}
+
+.carousel__prev--in-next ,.carousel__next {
+  right: -0.7em;
+
+}
+
 
 
 .carouselContainer {
@@ -141,6 +158,16 @@ title: `Slide ${i + 1}`,
   padding-left: -4rem;
   margin-left: -0.558rem;
   margin-right: -0.58rem;
+}
+
+.carousel__pagination-item {
+  display: none;
+}
+
+.carousel__icon {
+  width: var(--vc-icn-width);
+  height: var(--vc-icn-width);
+  fill: white;
 }
 
 </style>
