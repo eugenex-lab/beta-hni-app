@@ -10,55 +10,6 @@
       <a class="prev" @click="prev" href="#">&#10094; Previous</a>
       <a class="next" @click="next" href="#">&#10095; Next</a>
     </div>
-    <!--  <MarqueeText-->
-    <!--      :duration="45"-->
-    <!--      :repeat="3"-->
-    <!--      :paused="isPaused"-->
-    <!--      class="py-2 bg-dark text-black text-center"-->
-    <!--      @mouseenter="isPaused = !isPaused"-->
-    <!--      @mouseleave="isPaused = false"-->
-    <!--  >-->
-
-    <!--    <span  class="borderStock">TWITTER <img class="triangle-up" :src="triagleImageStockUp" > 0.30% </span>-->
-    <!--    <span class="borderStock">FACEBOOK<img class="triangle-down" :src="triagleImageStockDown" >  -0.16% </span>-->
-    <!--    <span class="borderStock"> TESLA <img class="triangle-up" :src="triagleImageStockUp"> 0.14%</span>-->
-    <!--    <span class="borderStock" >AMAZON <img class="triangle-down" :src="triagleImageStockDown">-0.19%</span>-->
-    <!--    <span class="borderStock" >APPLE  <img class="triangle-up" :src="triagleImageStockUp">0.12%</span>-->
-    <!--    <span class="borderStock">MICROSOFT  <img class="triangle-up" :src="triagleImageStockUp">0.13%</span>-->
-    <!--    <span  class="borderStock"> GOOGLE  <img class="triangle-up" :src="triagleImageStockUp">-0.19%</span>-->
-    <!--    <span class="borderStock"> NETFLIX  <img class="triangle-down" :src="triagleImageStockDown">-0.19%</span>-->
-    <!--    <span class="borderStock"> FACEBOOK  <img class="triangle-up" :src="triagleImageStockUp"> 0.19%</span>-->
-    <!--    <span class="borderStock"> TESLA  <img class="triangle-down" :src="triagleImageStockDown">-0.19%</span>-->
-    <!--    <span class="borderStock"> AMAZON  <img class="triangle-up" :src="triagleImageStockUp">0.19%</span>-->
-    <!--    <span class="borderStock"> APPLE  <img class="triangle-down" :src="triagleImageStockDown">-0.19%</span>-->
-    <!--    <span class="borderStock"> MICROSOFT  <img class="triangle-up" :src="triagleImageStockUp">0.19%</span>-->
-
-    <!--  </MarqueeText>-->
-
-
-    <!--    <MarqueeText-->
-    <!--        :duration="20"-->
-    <!--        :paused="isPaused"-->
-    <!--        reverse-->
-    <!--        class="py-2 mt-2 bg-light"-->
-    <!--    >-->
-    <!--      Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt-->
-    <!--      ut labore et dolore magna aliquyam erat, sed diam voluptua.-->
-    <!--    </MarqueeText>-->
-    <!--    <MarqueeText-->
-    <!--        :duration="45"-->
-    <!--        :repeat="3"-->
-    <!--        :paused="isPaused"-->
-    <!--        class="py-2 bg-dark text-white"-->
-    <!--    >-->
-    <!--      <span class="badge badge-success ml-2">0,0000038%</span> ATX-->
-    <!--      <span class="badge badge-danger ml-2">0,000016%</span> DAX-->
-    <!--      <span class="badge badge-success ml-2">0,0000004%</span> TecDax-->
-    <!--      <span class="badge badge-danger ml-2">0,0009%</span> MDAX-->
-    <!--      <span class="badge badge-success ml-2">0,00000003%</span> ESTX50-->
-    <!--      <span class="badge badge-info ml-2">0,0000%</span> NIKKEI-->
-    <!--      <span class="badge badge-success ml-2">0,00003%</span> EUR/CHF-->
-    <!--    </MarqueeText>-->
 
 
     <MarqueeSlides>
@@ -70,7 +21,6 @@
     <div class="stockPane">
       <section class="innerLayoutStock">
         <div class="buttonContainer">
-          <span>
       <section class="layoutStock">
 
            <div>
@@ -120,33 +70,41 @@
 
  <div class="stockContainer">
           <VueCarosel
-              class="cardSlide"
-
-          ></VueCarosel>
+              class="cardSlide"></VueCarosel>
         </div>
 
 
 
-      </span>
 
           <div class="adPane">
-            <p class="textRecommendedStocks">Hi Bitches </p>
+            <p class="textRecommendedStocks">Ad goes here Bitches </p>
           </div>
-
-
         </div>
 
 
+        <div class="picContainer">
+          <img class="olaSection" :src="olaSection">
 
-
-
-
-
-        <div class="picContainer">3
-        gimme allowee I no go stress u
         </div>
         <div class="infoContainer">
-              <a> Room is already booked </a>
+                 <div class="rectangleBelow">
+
+                   <div class="why-invest-on-wealth-ng">Why invest on Wealth.ng?</div>
+
+
+                   <div>
+                                                             <img :src="laptopShield" class="laptopShield">
+                     <a class="laptopShieldHeader">It's Secure</a>
+                     <a class="laptopShieldBody">Maecenas sodales justo
+odio, sit amet </a>
+
+                   </div>
+                   <img :src="sittingCoin" class="sittingCoin">
+                   <img :src="stampedCertified" class="stampedCertified">
+                   <img :src="protectionBlue" class="protectionBlue">
+                   <img :src="cashBack" class="cashBack">
+
+    </div>
 
         </div>
 
@@ -160,9 +118,7 @@
 
 </span>
 
-    <div>
-      <a>Hi Gentle perople of voilcence community </a>
-    </div>
+
   </section>
 
 
@@ -215,6 +171,12 @@ export default defineComponent({
           agricPic: require('../../../public/images/tractor icon.png'),
           realEstatePic: require('../../../public/images/building icon.svg'),
           savingsPic: require('../../../public/images/piggybank icon.png'),
+          olaSection: require('../../../public/images/olaSection.png'),
+          laptopShield: require('../../../public/images/laptopShield.png'),
+          sittingCoin: require('../../../public/images/boyLaptop.png'),
+          stampedCertified: require('../../../public/images/stampIcon.png'),
+          protectionBlue: require('../../../public/images/shieldIcon.png'),
+          cashBack: require('../../../public/images/walletArrow.png'),
 
 
           timer: null,
@@ -263,8 +225,96 @@ export default defineComponent({
 
 <style scoped>
 
+.laptopShield {
+  position: absolute;
+  height: 65px;
+  width: 61px;
+  left: 100px;
+  top: 119px;
+}
+
+.laptopShieldHeader {
+  position: absolute;
+  opacity: 0.87;
+  color: #000000;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0;
+  left: 90px;
+  top: 197px;
+}
+
+.laptopShieldBody {
+  position: absolute;
+  left: 49px;
+  top: 223px;
+  height: 34px;
+  width: 163px;
+  opacity: 0.69;
+  color: #000000;
+  font-family: Inter;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 17px;
+  text-align: center;
+}
+
+
+.sittingCoin {
+  position: absolute;
+  height: 65px;
+  width: 61px;
+  left: 276px;
+  top: 118px;
+}
+
+.stampedCertified {
+  position: absolute;
+  height: 65px;
+  width: 61px;
+  left: 466px;
+  top: 121px;
+}
+
+.protectionBlue {
+  position: absolute;
+  height: 65px;
+  width: 61px;
+  right: 309px;
+  top: 120px;
+}
+
+
+.cashBack {
+  position: absolute;
+  height: 65px;
+  width: 61px;
+  right: 135px;
+  top: 119px;
+
+}
+
+
+.olaSection {
+  width: 99.5%;
+  height: 35rem;
+  position: absolute;
+  top: 1rem;
+  left: -1.2rem;
+  background-color: #0BA50D;
+  border-radius: 0.4rem;
+}
+
 /*@import 'bootstrap/dist/css/bootstrap.css';*/
 /*@import 'bootstrap-vue/dist/bootstrap-vue.css';*/
+
+.carousel__item__content__title {
+  background-color: white;
+  position: relative;
+  width: 8.5rem;
+  height: 11.5rem;
+}
 
 .triangle-up {
   width: 15px;
@@ -286,18 +336,17 @@ main {
   background-color: green;
 }
 
-.innerLayoutStock {
-  width: -webkit-fill-available;
-  height: 268px;
+.layoutStock {
+  position: absolute;
+  height: 168px;
   display: grid;
-  grid:
-        "photoSlide" 1fr
-        "fxSlide" 1fr
-        "." 1fr / 1fr;
-  gap: 0px 4px;
-  align-content: flex-start;
-  padding-bottom: 7rem;
-
+  grid-template-rows: 1fr;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 50px 4%;
+  /* margin-top: 2.5rem; */
+  /* margin-left: -1rem; */
+  grid-column-gap: 1rem;
+  left: 55.9rem;
 }
 
 .photoSlide {
@@ -334,17 +383,11 @@ main {
 
 }
 
-img {
+
+.mySliderImage {
   height: 450px;
   width: 100%;
   margin-top: -2rem;
-
-}
-
-
-mySliderImage {
-  /*height:450px;*/
-  /*width:100%*/
 }
 
 .triangle-down {
@@ -437,94 +480,81 @@ table code {
 
 }
 
-.layoutStock {
-
-  width: fit-content;
-  display: flex;
-  gap: 40px;
-  justify-content: space-between;
-
-
-  /*height: 168px;*/
-  /*display: grid;*/
-  /*grid-template-rows: 1fr;*/
-  /*grid-template-columns: repeat(6, 1fr);*/
-  /*gap: 50px 4%;*/
-  /*margin-top: 2.5rem;*/
-  /*margin-left: -1rem;*/
-  /*grid-column-gap: 1rem;*/
+.layoutStock[data-v-59057b99][data-v-59057b99] {
+  position: absolute;
+  height: 168px;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 50px 4%;
+  /* margin-top: 2.5rem; */
+  /* margin-left: -1rem; */
+  grid-column-gap: 1rem;
+  left: 0.8rem;
 }
 
-.stockPane {
-  height: fit-content;
-  width: 80%;
-  /*background-color: #f3e019;*/
-  margin-left: 70px;
+
+.adPane[data-v-59057b99][data-v-59057b99] {
+  height: 42rem;
+  width: 6.3rem;
+  background-color: #d6d6d6;
+  /* padding-left: 12rem; */
+  position: absolute;
+  right: -7rem;
+  top: -26rem;
+  z-index: 0;
 }
 
-.adPane {
-  height: 18rem;
-  width: 10rem;
-  background-color: #b25656;
-  padding-left: 12rem;
-  position: relative;
-  margin-left: 3rem;
-
-
-}
-
-.buttonContainer {
-  /*display: flex;*/
-  /*justify-content: center;*/
-  /*align-items: self-start;*/
-  /*margin-top: 10px;*/
-
+.buttonContainer[data-v-59057b99] {
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: self-start; */
+  /* margin-top: 10px; */
   display: flex;
   justify-content: flex-start;
   align-items: self-start;
   margin-top: 10px;
+  position: relative;
 }
 
-.stockContainer {
+.stockContainer[data-v-59057b99][data-v-59057b99][data-v-59057b99] {
   display: block;
   justify-content: center;
   align-items: center;
-  /*height: 200px; //dont add height */
-  width: 100%;
-  margin-right: 8rem;
-  margin-left: -3.3rem;
-
-
+  position: relative;
+  left: -2.7rem;
+  top: 0rem;
 }
 
 .picContainer {
   display: flex;
   justify-content: space-around;
   align-items: inherit;
-  margin-top: 10px;
+  margin-top: 2px;
+  position: relative;
 }
 
-.infoContainer {
+.infoContainer[data-v-59057b99] {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 10px;
+  /* margin-top: 10px; */
+  position: relative;
+  /*background-color: pink;*/
+  height: 30rem;
+  top: 38rem;
 }
 
-.layoutStock {
-
+.layoutStock[data-v-59057b99][data-v-59057b99][data-v-59057b99] {
+  position: absolute;
   height: 168px;
-
   display: grid;
   grid-template-rows: 1fr;
   grid-template-columns: repeat(6, 1fr);
   gap: 50px 4%;
-  margin-top: 2.5rem;
-  /*margin-left: -1rem;*/
 
   grid-column-gap: 1rem;
-
-
+  left: -1.2rem;
 }
 
 .rectangleBlue {
@@ -535,18 +565,16 @@ table code {
 }
 
 .broadLayoutStocks {
-
   width: 100%;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 10px;
-  margin-left: -4rem;
-
-  background-color: #e1e1e1;
-
-
+  /* margin-left: -4rem; */
+  background-color: #efefef;
+  padding-bottom: 80rem;
+  position: relative;
 }
 
 .rectangleBlueText {
@@ -610,20 +638,17 @@ MarqueeSlides {
 
 }
 
-.textForRecommended {
-  height: 21px;
-  width: 198px;
+.textForRecommended[data-v-59057b99] {
   color: #020E1E;
   font-family: Inter;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 600;
   letter-spacing: 0;
-  line-height: 11rem;
-  margin-top: -13rem;
-  margin-left: 0.6em;
-
+  position: absolute;
+  top: 2.6rem;
+  left: -1.1rem;
+  z-index: 1;
 }
-
 
 .vueperslide {
 
@@ -655,7 +680,7 @@ MarqueeSlides {
   /* margin-top: 6rem; */
 
 
-  width: 62.1rem;
+  width: 63em;
   height: initial;
   /*display: flex;*/
   align-items: center;
@@ -667,4 +692,29 @@ MarqueeSlides {
 
 
 }
+
+
+.rectangleBelow {
+  height: 27.5rem;
+  width: 62.9rem;
+  border-radius: 6px;
+  background-color: #FFFF;
+  z-index: 1;
+  position: absolute;
+  /* top: 38rem; */
+  left: -1.5rem;
+}
+
+.why-invest-on-wealth-ng {
+  color: #000000;
+  font-family: Inter;
+  font-size: 26px;
+  font-weight: bold;
+  letter-spacing: 0;
+  position: absolute;
+  top: 5%;
+  left: 19%;
+  transform: translate(50%, 50%);
+}
+
 </style>

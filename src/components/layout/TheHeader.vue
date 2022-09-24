@@ -3,6 +3,7 @@
     <nav>
       <h1>
         <router-link to="/">
+
           <img class="imagePosition" src="https://dp76jxyzopnbo.cloudfront.net/wealthng/2.0/static/images/logo-w.svg" alt="home"/>
         </router-link>
       </h1>
@@ -15,13 +16,16 @@
             <img class="cartImage" src="https://img.icons8.com/ios-filled/50/FFFFFF/shopping-cart.png" alt="home"
             />
           </router-link>
-          <base-badge mode="elegant">{{ cartQuantity }}</base-badge>
+<!--          <base-badge mode="elegant">{{ cartQuantity }}</base-badge>-->
         </li>
         <li>
           <router-link to="/about">About</router-link>
         </li>
+<!--        <li>-->
+<!--          <router-link to="/login">Login</router-link>-->
+<!--        </li>-->
         <li>
-          <router-link to="/login">Login</router-link>
+          <router-link class="styleSendRq" to="/advisorlist">Contact Advisor</router-link>
         </li>
         <li >
 
@@ -56,6 +60,11 @@ export default {
 
 <style scoped>
 
+a.styleSendRq {
+  position: relative;
+  width: 7.5rem;
+}
+
 span.signUpAlign {
   position: relative;
   top: 0.3em;
@@ -73,7 +82,7 @@ button {
 
 }
 header {
-
+  height: 5rem;
   width: 100%;
   /*height: 4.5rem;*/
   background-color: #063a79;
@@ -120,6 +129,7 @@ h1 a.router-link-active {
 
 header nav {
   width: 90%;
+  height: 5rem;
   margin: auto;
   display: flex;
   justify-content: space-between;
@@ -199,6 +209,7 @@ li:last-child {
   letter-spacing: 0;
   line-height: NaNpx;
   right: -0.5rem;
+  top: 0.3rem;
 }
 
 .imagePosition{
@@ -207,6 +218,15 @@ li:last-child {
   position: relative;
   top: 0.3em;
   left: -0.5rem;
+}
+
+.badge{
+  /* background-color: #ccc; */
+  color: #252525;
+  border-radius: 30px;
+  padding: 0.5rem 1.5rem;
+  display: inline-block;
+  margin-right: 0.5rem;
 }
 
 

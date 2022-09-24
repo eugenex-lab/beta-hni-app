@@ -1,12 +1,12 @@
 <template>
-  <form @submit.prevent="submitForm">
+  <form @submit.prevent="submitForms">
     <div class="form-control">
       <label for="product-name">Product Name</label>
-      <input id="product-name" name="product-name" type="text" v-model="form.productName" required/>
+      <input id="product-name" name="product-name" type="text" placeholder='product Name' v-model="form.productName" required/>
     </div>
     <div class="form-control">
       <label for="product-initials">Product Initials To Display</label>
-      <input id="product-initials" name="product-initials" type="text" v-model="form.productInitials" required/>
+      <input id="product-initials" name="product-initials" type="text"  placeholder='Product Abbr' v-model="form.productInitials" required/>
     </div>
     <div class="form-control">
       <label for="unit-price">Unit Price for Product</label>
@@ -15,7 +15,7 @@
         <option value="$">$ Dollars</option>
         <option value="₦">₦ Naira</option>
       </select>
-              <input class="priceForm" id="unit-price" name="unit-price" type="number" v-model="form.unitPrice"/>
+              <input class="priceForm" id="unit-price" name="unit-price" type='number' step='0.01'  placeholder='0.00' v-model="form.unitPrice"/>
       </span>
 
     </div>
@@ -23,7 +23,7 @@
 
     <div class="form-control">
       <label for="product-rate">Interest Rate </label>
-      <input id="product-rate" name="product-rate" type="number" v-model="form.productRate"/>
+      <input id="product-rate" name="product-rate" type='number' step='0.01'  placeholder='0.00' v-model="form.productRate"/>
     </div>
 
 
@@ -102,23 +102,44 @@ export default {
       productRate: "",
       productDuration: "",
       currencyInput: "",
+      logo:"",
     })
 
-    const submitForm = async () => {
-      console.log(form)
-      // createUser(form)
-      await createWealthProduct({...form})
-      form.productName = ""
-      form.productInitials = ""
-      form.unitPrice = ""
-      form.productRate = ""
-      form.productDuration = ""
-      form.currencyInput = ""
-    }
-
+    // const submitForm = async () => {
+    //   console.log(form)
+    //   // createUser(form)
+    //   await createWealthProduct({...form})
+    //   form.productName = ""
+    //   form.productInitials = ""
+    //   form.unitPrice = ""
+    //   form.productRate = ""
+    //   form.productDuration = ""
+    //   form.currencyInput = ""
+    //
+    //   // redirect to another page called productlist
+    //   this.$router.push({ name: 'products' })
+    //
+    // }
     return {
       form,
-      submitForm
+      // submitForm
+    }
+  },
+  methods: {
+    submitForms() {
+      console.log(this.form)
+      // createUser(form)
+      createWealthProduct({...this.form})
+      this.form.productName = ""
+      this.form.productInitials = ""
+      this.form.unitPrice = ""
+      this.form.productRate = ""
+      this.form.productDuration = ""
+      this.form.currencyInput = ""
+      this.form.logo = ""
+
+      this.$router.push({ name: 'products' })
+
     }
   }
 }

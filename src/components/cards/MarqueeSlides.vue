@@ -105,7 +105,7 @@ export default {
 
 .marquee{
   height: 48px;
-  width: 1920px;
+  width: 100%;
   background-color: rgb(134 134 134 / 20%);
   position: relative;
   top: -7px;

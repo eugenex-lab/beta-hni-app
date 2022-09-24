@@ -1,0 +1,29 @@
+<template>
+<div class="card">
+  <slot>
+  </slot>
+</div>
+</template>
+
+<script>
+export default {
+  name: "BaseCard"
+}
+</script>
+
+<style scoped>
+
+.card {
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 26%);
+  /* padding: 1rem; */
+  margin: 1rem auto;
+  max-width: 68rem;
+  height: 65rem;
+}
+
+.filterSection{
+  height: 4rem;
+}
+
+</style>

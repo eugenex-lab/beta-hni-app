@@ -8,37 +8,44 @@ import ProductDetail from "@/pages/product/ProductDetail";
 import ContactAdvisor from "@/pages/product/ContactAdvisor";
 import RegisterUser from "@/pages/user/RegisterUser";
 import NotFound from "@/pages/NotFound";
-import AdvisorPage from "@/pages/admin/AdvisorPage";
+import AdvisorList from "@/pages/admin/AdvisorList";
 import AboutPage from "@/pages/admin/AboutPage";
 import UpdateProduct from "@/pages/admin/UpdateProduct";
+import UserRequests from "@/pages/admin/UserRequests";
+import AdvisorDetails from "@/pages/admin/AdvisorDetails";
+
 
 
 const router = createRouter({
     history: createWebHistory(),
     routes: [
-        {path: '/', redirect: '/products'},
-        {path: '/products', component: ProductList},
+        {path: '/', redirect: '/products' },
+        {path: '/products', component: ProductList , name: 'products'},
         {
             path: '/products/:id', component: ProductDetail, children: [
                 {path: 'contactAdvisor', component: ContactAdvisor},
+                // {path: 'cartList', component: CartList}
             ]
         },
         {path: '/cart', component: CartList},  // Product page
         {path: '/about', component: AboutPage},
         {path: '/registerUser', component: RegisterUser}, // user folder
         {path: '/registerAdvisor', component: RegisterAdvisor},  // admin
-        {path: '/advisorPage', component: AdvisorPage},
+        {path: '/userRequests', component: UserRequests},  // admin
+        {path: '/advisorlist', component: AdvisorList},
+        {path: '/advisorlist/:id', component: AdvisorDetails,
+            children : [
+                {path: 'contact', component: ContactAdvisor}
+            ]
+
+        },
+
         // Not found page
         {path: '/:notFound(.*)', component: NotFound},
         {path: '/registerProduct', component: RegisterProduct},
         {path: '/updateProduct/:id', component: UpdateProduct},
 
-    /// much more later'
-    // path login page
-    // main lage page
-    // path login user
-    // path login admin
-    //  a ddashboard page  -- firebase backend
+
 
     ]
 });

@@ -54,6 +54,19 @@ export default {
 </script>
 
 <style module>
+.vue3-marquee .marquee{
+  --duration: 100s;
+  --delay: 0s;
+  --direction: normal;
+  --pauseOnHover: paused;
+  --pauseOnClick: running;
+  --loops: infinite;
+  --gradient-color: rgba(255, 255, 255, 1), rgba(255, 255, 255, 0);
+  --gradient-width: 100%;
+  --min-width: 100%;
+  width: 100%;
+}
+
 .wrap {
   overflow: hidden;
 }
