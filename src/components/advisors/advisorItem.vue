@@ -46,7 +46,7 @@
                 </router-link>
 
 
-              <router-link :to="advisorDetailsLink"  class="myButton">View Details</router-link>
+              <base-button  link :to="advisorDetailsLink"  class="myButton">View Details</base-button >
             </div>
 <!--          </div>-->
         </div>
@@ -105,7 +105,8 @@ return{
     },
 
     advisorDetailsLink(){
-      return this.$route.path + '/' + this.id
+      return   this.$route.path + '/' + this.id; // /coaches/c1
+      // return this.$route.path + '/' + this.id;  //
     }
   }
 }

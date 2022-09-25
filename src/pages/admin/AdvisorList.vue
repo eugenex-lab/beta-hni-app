@@ -24,6 +24,7 @@
 
         <advisor-item v-for="item in advisorList "
                       :key="item.id"
+                      :id="item.id"
                       :description="item.description"
                       :firstName="item.firstName"
                       :lastName="item.lastName"

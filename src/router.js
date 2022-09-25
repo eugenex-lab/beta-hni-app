@@ -32,8 +32,11 @@ const router = createRouter({
         {path: '/registerUser', component: RegisterUser}, // user folder
         {path: '/registerAdvisor', component: RegisterAdvisor},  // admin
         {path: '/userRequests', component: UserRequests},  // admin
-        {path: '/advisorlist', component: AdvisorList},
-        {path: '/advisorlist/:id', component: AdvisorDetails,
+        {path: '/advisors', component: AdvisorList},
+        {
+            path: '/advisors/:id',
+            component: AdvisorDetails,
+            props: true,
             children : [
                 {path: 'contact', component: ContactAdvisor}
             ]

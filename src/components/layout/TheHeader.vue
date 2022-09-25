@@ -25,7 +25,7 @@
 <!--          <router-link to="/login">Login</router-link>-->
 <!--        </li>-->
         <li>
-          <router-link class="styleSendRq" to="/advisorlist">Contact Advisor</router-link>
+          <router-link class="styleSendRq" to="/advisors">Contact Advisor</router-link>
         </li>
         <li >
 

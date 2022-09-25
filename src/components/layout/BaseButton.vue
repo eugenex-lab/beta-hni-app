@@ -1,4 +1,5 @@
 <template>
+
   <button v-if="!link" :class="mode">
     <slot></slot>
   </button>
@@ -14,7 +15,7 @@ export default {
     mode:{
       type:String,
       required:false,
-      default:'null'
+      default:null
 
     },
     link: {
