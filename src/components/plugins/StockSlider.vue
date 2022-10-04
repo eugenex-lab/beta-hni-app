@@ -78,6 +78,11 @@ export default {
   100% { transform:translateX(-100%); }
 }
 
+.stockButton__button:hover {
+  background-color: #063a79;
+  color: #ffc903;
+}
+
 
 
 </style>

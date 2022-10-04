@@ -30,7 +30,7 @@ const router = createRouter({
         {path: '/cart', component: CartList},  // Product page
         {path: '/about', component: AboutPage},
         {path: '/registerUser', component: RegisterUser}, // user folder
-        {path: '/registerAdvisor', component: RegisterAdvisor},  // admin
+        {path: '/registeradvisor', component: RegisterAdvisor},  // admin
         {path: '/userRequests', component: UserRequests},  // admin
         {path: '/advisors', component: AdvisorList},
         {

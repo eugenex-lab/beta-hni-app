@@ -225,6 +225,8 @@ export default defineComponent({
 
 <style scoped>
 
+
+
 .laptopShield {
   position: absolute;
   height: 65px;

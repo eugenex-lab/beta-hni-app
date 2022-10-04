@@ -19,11 +19,18 @@ export default {
   /* padding: 1rem; */
   margin: 1rem auto;
   max-width: 68rem;
-  height: 65rem;
+  height: 100rem;
 }
 
 .filterSection{
-  height: 4rem;
+  height: 5rem;
+}
+
+base-card {
+  margin-left: 3rem;
+  margin-right: 3rem;
+  max-width: 68rem;
+  height: 65rem;
 }
 
 </style>

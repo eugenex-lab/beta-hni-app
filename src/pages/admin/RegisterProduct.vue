@@ -1,4 +1,5 @@
 <template>
+
   <form @submit.prevent="submitForms">
     <div class="form-control">
       <label for="product-name">Product Name</label>
@@ -85,6 +86,7 @@
     </div>
 
   </form>
+
 </template>
 
 <script>
@@ -158,6 +160,8 @@ form {
 
 .form-control {
   margin: 0.5rem 0;
+  margin-left: 3rem;
+  margin-right: 7rem;
 }
 
 label {

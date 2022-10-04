@@ -1,7 +1,9 @@
 <template>
-  <div>
+
     <base-card class="filterSection">
-      <section>FILTER</section>
+      <section>
+        <advisor-filter @change-filter="setFilter" ></advisor-filter>
+      </section>
 
     </base-card>
     <section>
@@ -9,12 +11,12 @@
 
         <base-button class="refreshButtonPosition"  mode="outline" >Refresh</base-button>
 
-      <div class="card">
+<!--      <div class="card">-->
 
-        <base-button class="RegisterAdvisor" link to="/registerAdvisor">Register as Advisor</base-button>
+        <base-button v-if="!isAdvisor" class="RegisterAdvisor" link to="/registeradvisor">Register as Advisor</base-button>
 
-      </div>
-      <ul v-if="advisorHasClients">
+<!--      </div>-->
+      <ul class="centerLIst" v-if="advisorHasClients">
         <!--        <li v-for="advisor in advisorList" :key="advisor.id">-->
         <!--          {{ advisor.firstName }} {{ advisor.lastName }}-->
         <!--          <router-link :to="'/advisors/' + advisor.id">-->
@@ -42,25 +44,79 @@
       </base-card>
 
     </section>
-  </div>
+
 </template>
 
 <script>
 import AdvisorItem from "@/components/advisors/advisorItem";
 import BaseCard from "@/components/layout/BaseCard";
 import BaseButton from "@/components/layout/BaseButton";
+import AdvisorFilter from "../../components/advisors/AdvisorFilter";
 
 export default {
   name: "UserRequest",
-  components: {BaseButton, BaseCard, AdvisorItem},
+  components: {BaseButton, BaseCard, AdvisorItem,AdvisorFilter},
+  data(){
+    return {
+    activeFilter: {
+      TreasuryBill: true,
+          Bonds: true,
+          Stocks: true,
+          Agriculture: true,
+          RealEstate: true,
+          Savings: true
+    }
+  };
+  },
   computed: {
+    // advisorList() {
+    //   return this.$store.getters["advisorNameSpaced/advisors"]; // returns all advisors in the store
+    // },
+
+
+      isAdvisor() {
+         console.log(this.$store.getters['authNameSpaced/isAdvisor']);  // returns true if user is an advisor
+
+        return this.$store.getters["advisorNameSpaced/isAdvisor"]; // returns all advisors in the store
+
+      },
+
+
     advisorList() {
-      return this.$store.getters["advisorNameSpaced/advisors"];
+      const advisor = this.$store.getters["advisorNameSpaced/advisors"];
+      return advisor.filter(advisor => {
+        if (this.activeFilter.TreasuryBill && advisor.productCategory.includes('TreasuryBill')) {
+
+          return true;
+        }
+        if (this.activeFilter.Bonds && advisor.productCategory.includes('Bonds')) {
+          return true;
+        }
+        if (this.activeFilter.Stocks && advisor.productCategory.includes('Stocks')) {
+          return true;
+        }
+        if (this.activeFilter.Agriculture && advisor.productCategory.includes('Agriculture')) {
+          return true;
+        }
+        if (this.activeFilter.RealEstate && advisor.productCategory.includes('RealEstate')) {
+          return true;
+        }
+        if (this.activeFilter.Savings && advisor.productCategory.includes('Savings')) {
+          return true;
+        }
+        return false;
+      })
     },
+
     advisorHasClients() {
       return this.$store.getters["advisorNameSpaced/clientHasAdvisor"];
     }
   },
+  methods: {
+    setFilter(updatedFilter) {
+      this.activeFilter = updatedFilter ;
+    }
+  }
 }
 </script>
 
@@ -86,20 +142,19 @@ list-style: none;
 .RegisterAdvisor{
 
   border-radius: 4px;
-padding: 0.5rem;
+  padding: 0.5rem;
   background-color: #4CAF50;
   border-radius: 4px;
-  /* cursor: pointer; */
   font-size: 1rem;
-  top: 1rem;
-  margin-left: 53.5rem;
-  position: relative;
+  top: 13rem;
+  position: absolute;
+  right: 8rem;
 
 }
 
 .refreshButtonPosition{
   position: absolute;
-  top: 12rem;
+  top: 13rem;
   left: 9rem;
 
 }
@@ -109,5 +164,26 @@ body{
   background-color: rgba(196, 137, 156, 0.18);
   /*background-color: rgba(203, 45, 96, 0.18);*/
 }
+
+.centerLIst{
+  margin-left: 31rem;
+  margin-left: 31rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  display: flex;
+  /* align-items: baseline; */
+  text-align: left;
+  align-items: baseline;
+  position: absolute;
+  margin-left: 3rem;
+  margin-right: 3rem;
+  /* padding-top: 2.5rem; */
+  margin-top: 2.5rem;
+}
+
+
 
 </style>

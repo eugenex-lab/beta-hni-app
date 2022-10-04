@@ -141,6 +141,12 @@ title: `Slide ${i + 1}`,
 </script>
 
 <style >
+
+.stockButton__button:hover {
+  background-color: #063a79;
+  color: #ffc903;
+}
+
 .chatPosition{
   display: none;
   top: 9.25rem;

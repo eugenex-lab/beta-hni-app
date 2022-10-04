@@ -10,7 +10,7 @@ export default {
   props:['type','title'],
   computed: {
     text() {
-      return this.title.toUpperCase();
+      return this.title;
     }
   }
 }
@@ -26,7 +26,7 @@ export default {
   margin-right: 0.5rem;
 }
 
-.Treasury-Bill{
+.TreasuryBill{
   background-color: #3d008d;
   color: white;
 }

@@ -68,7 +68,18 @@ return{
           "https://img.freepik.com/free-photo/house-isolated-field_1303-23773.jpg?w=740&t=st=1663933101~exp=1663933701~hmac=9667d3b6aeda59b2470d953726fd09e604497baf5498e86bae2b80e757300b09",
           "https://img.freepik.com/free-photo/glass-jar-full-money-front-decreasing-stacked-coins-against-white-background_23-2147919228.jpg?w=740&t=st=1663933148~exp=1663933748~hmac=ee433e928a0838c8e00058df748ed8408c532a8c55f13984b9baf20d12e29b9b",
           "https://img.freepik.com/free-vector/young-investors-working-profit-dividend-revenue_74855-6143.jpg?w=740&t=st=1663933188~exp=1663933788~hmac=fe59b0f2f2afcd44b3e87c73e08bb0337ae28e1f1c6107f791b47f3d3fa90ae7",
-          "https://img.freepik.com/free-photo/modern-country-houses-construction_1385-14.jpg?w=740&t=st=1663933218~exp=1663933818~hmac=e9ed1d905d1420f2d39e22dd21da1fd60c1789cd22634e08399a83a21c0f063f",
+          "https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+          "https://images.pexels.com/photos/1546168/pexels-photo-1546168.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+          "https://images.pexels.com/photos/36362/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+          "https://images.pexels.com/photos/7567430/pexels-photo-7567430.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+          "https://images.pexels.com/photos/1602726/pexels-photo-1602726.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+          "https://images.pexels.com/photos/4386150/pexels-photo-4386150.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+
+
+
+
+
+
 
       ],
   avaterImages: [
@@ -95,7 +106,7 @@ return{
     this.selectedAvater = this.randomItem(this.avaterImages)
   },
 
-  props:['id','firstName', 'lastName','description','email','productCategory'],
+  props:['id','firstName', 'lastName','description','email', 'productCategory'],
   computed:{
     fullName(){
       return this.firstName + ' ' + this.lastName;
@@ -149,12 +160,12 @@ return{
   display: inherit;}
 
 .advisorNamePosition{
-  position: inherit;
+  position: absolute;
   /* margin-top: 0.5rem; */
-  right: 5rem;
-  bottom: -1.5rem;
-  margin-left: 8rem;
-  width: 7rem;
+  right: 3rem;
+  bottom: -4.5rem;
+  /* margin-left: 8rem; */
+  width: 8rem;
   text-align: left;
 }
 
@@ -167,7 +178,7 @@ return{
   display: inline-block;
   /* right: 4rem; */
   position: absolute;
-  right: 3rem;
+  right: 1.2rem;
   top: 4.5rem;
   margin-top: 1rem;
   cursor: pointer;

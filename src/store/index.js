@@ -10,7 +10,17 @@ const store = createStore({
     productNameSpaced: productsModules,
     requestNameSpaced: requestsModules,
     advisorNameSpaced: advisorModules
-  }
+  },
+    state() {
+        return {
+            userId: 'a4',
+        };
+    },
+    getters: {
+        userId(state) {
+            return state.userId;
+        }
+    }
 })
 ;
 
